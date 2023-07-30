@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+section {
+    padding: 25px;
+}
+main {
+    margin-left: 310px;
+    min-height: 100vh;
+}
+
+.main_radio {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.radio_el {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #c3bef5;
+    vertical-align: sub;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.radio_el:hover {
+    box-shadow: 1px 1px 10px 0px #a363f7;
+    cursor: pointer;
+}
+
+.radio_el::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 40ms;
+    background-image: url('../src/icons/radio.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main_radio:checked+.radio_el::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.main_radio:focus+.radio_el {
+    box-shadow: 1px 1px 10px 0px #a363f7;
+}
+.radio_label:hover{
+    cursor: pointer;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
